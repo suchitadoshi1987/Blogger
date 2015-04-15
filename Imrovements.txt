@@ -1,0 +1,6 @@
+The improvements needed in the api side are:
+
+The API should be supporting CORS/jsonp
+Also, the API should return the response back, when you POST, DELETE any object
+the error messages from the api should be well formatted.
+
