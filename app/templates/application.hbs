@@ -1,0 +1,46 @@
+
+<div class='blog_component_container col-md-12' id="container">
+
+	<div id="header">
+		<h1> My Blog Site</h1>
+	</div>
+
+
+
+	<div class="col-md-4">
+		<h2>Recent Posts</h2>
+
+			{{#with this as currentController}}
+				{{#each post in recentPosts}}
+
+					<div class="row recent_posts">
+						{{#link-to 'app.blog' post}} {{post.dateFormatted}} {{post.title}}{{/link-to}}
+					</div>
+				{{/each}}
+				{{modal-component formId='new-form' formLabel='New Blog' formTitle = 'New Blog' currController=this}}
+				{{delete-modal postLabel='All Posts' label='Delete All Posts' currController=this}}
+			{{/with}}
+
+	</div>
+	<div id="content" class="col-md-8">
+
+			<div id="main">
+
+			{{outlet}}
+		</div>
+
+		<div id="side">
+
+
+
+		</div>
+	</div>
+
+
+
+
+
+</div>
+
+
+

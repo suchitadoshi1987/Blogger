@@ -1,0 +1,7 @@
+{{#with this as currentController}}
+	{{#each post in currentPosts}}
+		{{blog-component postModel=post currController=currentController}}
+	{{/each}}
+{{/with}}
+
+

@@ -1,0 +1,32 @@
+<div class="jumbotron row col-md-12">
+
+	<div class="blog_content">
+		<h2 class="blog_header"><a href="#"></a>{{postModel.title}}</h2>
+
+		<div class="date">{{postModel.dateFormatted}}</div>
+
+		<div class="post-content">
+			<p class="blog-text">{{formattedText}} {{#if isMore}}
+				[...] </p>
+
+		<div class="pull-right">
+			{{#link-to 'app.blog' postModel}}Read More{{/link-to}}
+		</div>
+
+				{{/if}}
+	</div>
+</div>
+
+<div class="hover-btn ">
+	<div class="col-md-3">
+		{{modal-component formId=postModel.id formTitle=formTitle postModel=postModel currController=currController}}
+	</div>
+	<div class="col-md-3">
+		{{delete-modal postLabel=postModel.title label='' postModel=postModel currController=currController}}
+	</div>
+</div>
+</div>
+
+</div>
+
+

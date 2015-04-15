@@ -1,0 +1,14 @@
+
+<button type="button"  {{action 'deletePost'}} class=" glyphicon glyphicon-remove btn-lg"><span class="blog_component">{{label}}</span></button>
+
+{{#ic-modal-form id=postModel.timestamp  close-when=formWasSubmitted
+open-when=isDeleteOpen
+
+}}
+	{{#ic-modal-title}}<h2>Confirm Delete</h2>{{/ic-modal-title}}
+
+	<h4>Are You sure to delete the blog {{postLabel}} ?</h4>
+	<button type="button" class="btn btn-lg btn-primary" {{action 'okDelete' label}}>Delete</button>
+{{/ic-modal-form}}
+
+
