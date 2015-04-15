@@ -22,3 +22,5 @@ You can see top 10 posts on the main screen, and you also have 5 recent posts wi
 Also, I have set the limit of characters on the "List of Blogs" page to be 150, if you want to see the whole blog, you can click on "Read More"
 
 Note: this is an ember app hence it will work only with ember s --proxy http://127.0.0.1:8080
+
+Visit your app at http://localhost:4200/app/blogs
