@@ -24,9 +24,8 @@ Ember.Mixin.create({
 		},
 		submitForm: function (data) {
 
-			if(Ember.isEmpty(this.get('postModel.title')) || Ember.isEmpty(this.get('postModel.text')))
-			{
-				this.set('error',"You need to fill all required fields");
+			if (Ember.isEmpty(this.get('postModel.title')) || Ember.isEmpty(this.get('postModel.text'))) {
+				this.set('error', "You need to fill all required fields");
 			}
 			else {
 				var url = (this.get('postModel') && !Ember.isEmpty(this.get('postModel.id'))) ? 'Blog/api/' + this.get('postModel.id') : 'Blog/api';
@@ -38,8 +37,8 @@ Ember.Mixin.create({
 				}).then(function () {
 					this.get('currController.store').find('app/post');
 				}.bind(this));
-				this.set('error',"");
-				this.set('isError',false);
+				this.set('error', "");
+				this.set('isError', false);
 				this.set('formWasSubmitted', true);
 			}
 
@@ -54,8 +53,7 @@ Ember.Mixin.create({
 				url: url
 
 			}).then(function () {
-				if (data !== 'Delete All') {
-					debugger;
+				if (data !== 'Delete All Posts') {
 					this.get('currController.model.content').removeObject(this.get('postModel'));
 				}
 				else {
